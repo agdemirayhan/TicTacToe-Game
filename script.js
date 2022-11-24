@@ -86,6 +86,10 @@ function checkWin() {
       winScreen.innerHTML = `<span>O WON</span>`;
       win = true;
       container.classList.add("win");
+    } else if (xArr.length === 5 && win === false) {
+      winScreen.classList.add("show");
+      winScreen.innerHTML = `<span>DRAW</span>`;
+      container.classList.add("win");
     }
   });
 }
