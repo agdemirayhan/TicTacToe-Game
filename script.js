@@ -5,6 +5,7 @@ const container = document.querySelector(".container");
 const winScreen = document.querySelector(".win-screen");
 const reset = document.querySelector(".reset");
 const turnScreen = document.querySelector(".turn");
+const opac = document.querySelectorAll(".opac");
 
 let xturn = true;
 let xArr = [];
@@ -46,7 +47,9 @@ reset.addEventListener("click", function () {
   squares.forEach((e) => {
     e.innerHTML = "";
     xturn = true;
-    container.classList.remove("win");
+    opac.forEach((e) => {
+      e.classList.remove("win");
+    });
     winScreen.classList.remove("show");
     winScreen.innerHTML = "";
     win = false;
@@ -83,5 +86,7 @@ function checkWin() {
 function showResult(x) {
   winScreen.classList.add("show");
   winScreen.innerHTML = `<span>${x}</span>`;
-  container.classList.add("win");
+  opac.forEach((e) => {
+    e.classList.add("win");
+  });
 }
