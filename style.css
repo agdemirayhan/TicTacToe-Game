@@ -5,11 +5,7 @@
 }
 
 html {
-  /* font-size: 10px; */
   font-size: 62.5%;
-
-  /* Does NOT work on Safari */
-  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -17,10 +13,8 @@ body {
   line-height: 1;
   font-weight: 400;
   color: #000;
-
-  /* Only works if there is nothing absolutely positioned in relation to body */
-
   position: relative;
+  overflow-x: hidden;
 }
 
 header {
@@ -31,14 +25,11 @@ header {
 }
 
 .container {
+  width: 100%;
   max-width: 60rem;
-  max-height: 100vh;
   padding: 2rem 0rem;
   margin: 0 auto;
   position: relative;
-  /* display: flex;
-  flex-direction: column;
-  align-items: center; */
 }
 
 .win-screen.show {
@@ -108,7 +99,7 @@ header {
   left: 50%;
   transform: translateX(-50%);
   position: absolute;
-  bottom: -5%;
+  bottom: -25%;
 }
 
 .reset:hover {
@@ -118,3 +109,180 @@ header {
 .reset:active {
   transform: translateX(-50%) scale(0.95);
 }
+
+@media (max-width: 600px) {
+  .container {
+    max-height: 400px;
+    max-width: 400px;
+    align-items: center;
+  }
+
+  .container .board {
+    grid-template-columns: 12.6rem 12.6rem 12.6rem;
+    grid-template-rows: 12.6rem 12.6rem 12.6rem;
+    gap: 1rem;
+  }
+
+  .symbol {
+    margin-top: 35px;
+  }
+
+  .symbol img {
+    width: 126px;
+    height: 126px;
+  }
+
+  .container header {
+    font-size: 48px;
+  }
+
+  .board {
+    background-size: 400px;
+    background-repeat: no-repeat;
+  }
+
+  .reset {
+    bottom: -60%;
+  }
+}
+
+@media (max-width: 500px) {
+  body {
+    display: flex;
+    align-items: center;
+  }
+
+  .container {
+    max-height: 300px;
+    width: 100%;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .container .board {
+    grid-template-columns: 9.6rem 9.6rem 9.6rem;
+    grid-template-rows: 9.6rem 9.6rem 9.6rem;
+    gap: 1rem;
+  }
+
+  .symbol {
+    margin-top: 60px;
+  }
+
+  .symbol img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .container header {
+    font-size: 36px;
+  }
+
+  .board {
+    background-size: 300px;
+    background-repeat: no-repeat;
+  }
+
+  .reset {
+    width: 70px;
+    height: 35px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: ;
+  }
+
+  .turn {
+    text-align: center;
+    height: 100px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 30px;
+    font-weight: bold;
+  }
+
+  .win-screen.show {
+    color: steelblue;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-12%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 70px;
+    font-weight: bold;
+    font-family: inherit;
+  }
+}
+
+@media (max-width: 323px) {
+  .container {
+    max-height: 300px;
+    max-width: 100%;
+    align-items: center;
+    margin-left: -10px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .container .board {
+    grid-template-columns: 6rem 6rem 6rem;
+    grid-template-rows: 6rem 6rem 6rem;
+    gap: 1rem;
+  }
+
+  .symbol {
+    margin-top: 100px;
+  }
+
+  .symbol img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .container header {
+    font-size: 24px;
+  }
+
+  .board {
+    background-size: 200px;
+    background-repeat: no-repeat;
+  }
+
+  .reset {
+    width: 60px;
+    height: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    bottom: -15%;
+  }
+
+  .turn {
+    text-align: center;
+    height: 50px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+
+  .win-screen.show {
+    color: steelblue;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-12%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    font-weight: bold;
+    font-family: inherit;
+  }
+} ;
